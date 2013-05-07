@@ -1,4 +1,4 @@
-package util;
+package matriisilaskin;
 
 /**
  * Automaattisesti sievenevä murtoluku.
@@ -13,11 +13,11 @@ public class Murtoluku {
     public Murtoluku(int osoittaja, int nimittaja) {
         this.osoittaja = osoittaja;
         this.nimittaja = nimittaja;
+        sievenna();
     }
 
     public Murtoluku(int osoittaja) {
-        this.osoittaja = osoittaja;
-        nimittaja = 1;
+        this(osoittaja, 1);
     }
 
     public Murtoluku add(Murtoluku m) {
@@ -45,7 +45,11 @@ public class Murtoluku {
     }
 
     public Murtoluku kaanteis() {
-        return new Murtoluku(nimittaja, osoittaja);
+        if (osoittaja != 0) {
+            Murtoluku murtoluku = new Murtoluku(nimittaja, osoittaja);
+            return murtoluku;
+        }
+        return new Murtoluku(0);
     }
 
     public int getOsoittaja() {
