@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * Matriisi jossa murtolukuja.
- *
+ * blaaa
  * @author moversti
  */
 public class Matriisi {
