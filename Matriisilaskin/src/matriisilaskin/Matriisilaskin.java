@@ -13,7 +13,7 @@ public class Matriisilaskin {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Murtoluku[][] a = {{new Murtoluku(6), new Murtoluku(0)}, {new Murtoluku(1), new Murtoluku(1)}};
+        Murtoluku[][] a = {{new Murtoluku(2), new Murtoluku(5)}, {new Murtoluku(3), new Murtoluku(6)}};
         System.out.println(new Matriisi(a).determinantti());
 //        Murtoluku[][] b = {{new Murtoluku(1), new Murtoluku(0)}, {new Murtoluku(0), new Murtoluku(1)}};
 //        Matriisi m = new Matriisi(a);
@@ -27,6 +27,6 @@ public class Matriisilaskin {
 //        System.out.println(m.add(n));
 //        System.out.println("");
 //        System.out.println(m.sub(n));
-        
+
     }
 }

@@ -26,17 +26,17 @@ public class Murtoluku {
         this.nimittaja = nimittaja;
         sievenna();
     }
-    
+
     /**
      *
      * @param osoittaja
      */
-    public Murtoluku(int osoittaja){
+    public Murtoluku(int osoittaja) {
         this(osoittaja, 1);
     }
 
     public boolean onNolla() {
-        if(osoittaja==0){
+        if (osoittaja == 0) {
             return true;
         }
         return false;
@@ -112,33 +112,10 @@ public class Murtoluku {
 
     /**
      *
-     * @param osoittaja
-     */
-    public void setOsoittaja(int osoittaja) {
-        this.osoittaja = osoittaja;
-        sievenna();
-    }
-
-    /**
-     *
      * @return
      */
     public int getNimittaja() {
         return nimittaja;
-    }
-
-    /**
-     *
-     * @param nimittaja
-     * @return
-     */
-    public boolean setNimittaja(int nimittaja) {
-        if (nimittaja != 0) {
-            this.nimittaja = nimittaja;
-            sievenna();
-            return true;
-        }
-        return false;
     }
 
     /**
@@ -151,7 +128,7 @@ public class Murtoluku {
 
     @Override
     public String toString() {
-        if (nimittaja != 1&&nimittaja != -1) {
+        if (nimittaja != 1 && nimittaja != -1) {
             return String.format("[%s/%s]", osoittaja, nimittaja);
         }
         return String.format("[%s]", osoittaja);
@@ -181,13 +158,5 @@ public class Murtoluku {
             e = c % e;
         }
         return Math.abs(d);
-    }
-
-    /**
-     *
-     * @return
-     */
-    public Murtoluku kopio() {
-        return new Murtoluku(osoittaja, nimittaja);
     }
 }

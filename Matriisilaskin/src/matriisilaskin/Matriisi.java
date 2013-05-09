@@ -6,7 +6,7 @@ package matriisilaskin;
  * @author Mikko Översti.
  */
 public class Matriisi {
-    
+
     /**
      *
      * @param koko
@@ -27,7 +27,6 @@ public class Matriisi {
         }
         return new Matriisi(asd);
     }
-
     /**
      *
      */
@@ -68,7 +67,7 @@ public class Matriisi {
         taulukko = new Murtoluku[i][j];
         for (int k = 0; k < i; k++) {
             for (int l = 0; l < j; l++) {
-                taulukko[k][l] = m.kopio();
+                taulukko[k][l] = m;
             }
         }
     }
@@ -86,6 +85,10 @@ public class Matriisi {
      *
      * @return
      */
+    public Murtoluku[][] getTaulukko() {
+        return taulukko;
+    }
+
     public Murtoluku[][] getTaulukkoKopio() {
         Murtoluku[][] paluu = new Murtoluku[getI()][getJ()];
         for (int i = 0; i < getI(); i++) {
@@ -103,7 +106,7 @@ public class Matriisi {
      */
     public Matriisi add(Matriisi m) {
         Murtoluku[][] summa = new Murtoluku[taulukko.length][taulukko[0].length];
-        Murtoluku[][] toinenTaulukko = m.getTaulukkoKopio();
+        Murtoluku[][] toinenTaulukko = m.getTaulukko();
         for (int i = 0; i < summa.length; i++) {
             for (int j = 0; j < summa[0].length; j++) {
                 summa[i][j] = taulukko[i][j].add(toinenTaulukko[i][j]);
@@ -119,7 +122,7 @@ public class Matriisi {
      */
     public Matriisi sub(Matriisi m) {
         Murtoluku[][] erotus = new Murtoluku[taulukko.length][taulukko[0].length];
-        Murtoluku[][] toinenTaulukko = m.getTaulukkoKopio();
+        Murtoluku[][] toinenTaulukko = m.getTaulukko();
         for (int i = 0; i < erotus.length; i++) {
             for (int j = 0; j < erotus[0].length; j++) {
                 erotus[i][j] = taulukko[i][j].sub(toinenTaulukko[i][j]);
@@ -154,7 +157,7 @@ public class Matriisi {
             throw new IllegalArgumentException();
         }
         Murtoluku[][] tulo = new Murtoluku[getI()][m.getJ()];
-        Murtoluku[][] toinenTaulukko = m.getTaulukkoKopio();
+        Murtoluku[][] toinenTaulukko = m.getTaulukko();
         for (int i = 0; i < tulo.length; i++) {
             for (int j = 0; j < tulo[0].length; j++) {
                 Murtoluku summa = new Murtoluku(0);
