@@ -13,6 +13,7 @@ public class LUHajotelma {
     private int pivotMerkki;
     private int m ,n;
 
+    //LU-algoritmit adaptoitu public domainissa olevasta java matrix packagesta eli JAMA:sta.
     public LUHajotelma(Matriisi mat) {
         LU = mat.getTaulukkoKopio();
         m = mat.getI();

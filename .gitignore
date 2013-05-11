@@ -4,3 +4,6 @@
 *.jar
 *.war
 *.ear
+/Matriisilaskin/nbproject/private/
+/Matriisilaskin/build/
+/Matriisilaskin/dist/
