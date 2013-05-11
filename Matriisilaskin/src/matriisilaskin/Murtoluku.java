@@ -141,6 +141,10 @@ public class Murtoluku {
         int SYT = SYT(osoittaja, nimittaja);
         osoittaja /= SYT;
         nimittaja /= SYT;
+        if(nimittaja<0){
+            nimittaja*=-1;
+            osoittaja*=-1;
+        }
     }
 
     /**
@@ -159,4 +163,31 @@ public class Murtoluku {
         }
         return Math.abs(d);
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 47 * hash + this.osoittaja;
+        hash = 47 * hash + this.nimittaja;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        Murtoluku other = (Murtoluku) obj;
+        if (this.osoittaja != other.getOsoittaja()) {
+            return false;
+        }
+        if (this.nimittaja != other.getNimittaja()) {
+            return false;
+        }
+        return true;
+    }
+    
 }
